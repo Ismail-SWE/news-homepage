@@ -1,21 +1,3 @@
-:root {
-  /* Primary */
-  --soft-orange: hsl(35, 77%, 62%);
-  --soft-red: hsl(5, 85%, 63%);
-
-  /* Neutral */
-  --off-white: hsl(36, 100%, 99%);
-  --grayish-blue: hsl(233, 8%, 79%);
-  --dark-grayish-blue: hsl(236, 13%, 42%);
-  --very-dark-blue: hsl(240, 100%, 5%);
-
-  /* Typography */
-  --font-size-base: 15px;
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -23,90 +5,298 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-regular);
-  background-color: var(--off-white);
+  font-family: "Inter", sans-serif;;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  max-width: 1110px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-
-  display: flex;
-  flex-direction: column;
-  /* gap: 64px; */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
+.grid-container {
+  display: grid;
+  background-color: hsl(36, 100%, 99%);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 24px;
+  margin-bottom: 100px;
+}
+
+/* men yozmagan joy boshlandi */
+
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
 }
 
 .nav-links {
-    display: flex;
-    /* inline block bo'lsin va gap ni qabul qilsin degani */
-    gap: 2rem;   
-    /* gap parent elementga beriladi va ichidagi elementlar orasidagi masofani belgilaydi */
-    list-style: none;
-    /* xech qaysi list styleni olmasin ul degani */
+  display: flex;
+  gap: 24px;
+  list-style: none;
 }
 
 .nav-links a {
-    text-decoration: none;
-    /* tagidagi chiziqni olib tashladi */
-    color: var(--dark-grayish-blue);
-    font-size: var(--font-size-base);
+  text-decoration: none;
+  color: inherit;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: #5E607A;
 }
 
 .nav-links a:hover {
-  color: var(--soft-red);
-}
-
-.hamburger {
-  display: none;
-  /* ko'rinmasdan turadi */
-  background: none;
-  /*  kulrang fonni olib tashlaydi*/
-  border: none;
+  color: #F15D51;
   cursor: pointer;
+
 }
 
-/* _____________________________________________ */
-.grid-container {
+/* men yozmagan joy tugadi */
+
+
+/* _________________________________________________________________________________________________ */
+/* rasmli container qism  */
+.featured {
+  grid-column: span 8;
+  grid-row: span 2;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 32px;
+  gap: 24px;
 }
-
-
-.new-article {
-  display: inline-block;
-  padding: 16px;
-  width: 350px;
-  background-color: black;
-  color: white;
-}
-
-
-
-
-
 
 .featured picture img {
-  width: 100%;
-  /* eng grandparent .container kengligini oladi */
-  height: auto;
-  /* rasm proportsiyasi buzilmaydi */
-  display: block;
-  /* rasm ostidagi keraksiz joy yo'qoladi */
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
+.featured picture {
+  grid-column: span 2;
+  width: 100%;
+}
 
+h1 {
+  font-size: 56px;
+  line-height: 56px;
+  font-weight: 800;
+}
 
+.featured-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+p {
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: #5E607A;
+}
+
+.featured a {
+  text-decoration: none;
+  border: none;
+  padding: 8px 32px;
+  background-color: #F15D51;
+  color: black;
+
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 4.38px;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 60%;
+  text-align: center;
+}
+
+.featured a:hover {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.2s ease;
+}
+
+/* _________________________________________________________________________________________________ */
+/* chap tarafdagi qora aside qism */
+aside {
+  grid-column: span 4;
+  grid-row: span 2;
+
+  background-color: hsl(240, 100%, 5%);
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+aside article {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+
+aside article:last-child{
+  border: none;
+}
+
+aside h2 {
+   color: #E9AA52;
+   font-size: 32px;
+   line-height: 32px;
+   font-weight: 700;
+}
+
+aside h3 {
+  color: white;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 800;
+}
+
+/* _________________________________________________________________________________________________ */
+/* Pasdagi trending qismi 3 ta itemlar turgan ularga ham alohida grid bilan joylashtirdim */
+section {
+  grid-column: span 12;
+  grid-row: span 1;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 28px;
+}
+
+.trending-item {
+  grid-column: span 4;
+
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.trending-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trending-item img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+section span {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #F15D51;
+}
+
+/* footer */
+
+footer{
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: #5E607A;
+}
+
+/* _________________________________________________________________________________________________ */
+.hamburger {
+    display: none;
+ }
+
+.featured picture img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+ }
+
+@media (max-width: 768px) {
+.hamburger {
+    display: block;
+ }
+
+.nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    background: white;
+    flex-direction: column;
+    padding: 80px 24px;
+    z-index: 100;
+ }
+
+.nav-links.open {
+    display: flex;
+ }
+
+.grid-container {
+    grid-template-columns: 1fr;
+ }
+
+.featured {
+    grid-column: 1;
+    grid-row: auto;
+    grid-template-columns: 1fr;
+ } 
+
+.featured picture {
+    grid-column: 1;
+    display: block;
+    width: 100%;
+ }
+
+.featured picture img {
+    height: 200px;
+ }
+
+aside {
+    grid-column: 1;
+    grid-row: auto;
+ }
+
+section {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    gap: 24px;
+ }
+
+.trending-item {
+    grid-column: 1;
+ }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.overlay.open {
+  display: block;
+}
 

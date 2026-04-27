@@ -9,11 +9,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
   </head>
   <body>
     <div class="container">
+    <div class="overlay" id="overlay"></div>
     <header>
       <nav>
 
@@ -44,8 +46,10 @@
           <img src="./assets/images/image-web-3-mobile.jpg" alt="Colorful 3D shapes representing Web 3.0"/>
         </picture>
         <h1>The Bright Future of Web 3.0?</h1>
-        <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
-        <a href="">Read more</a>
+        <div class="featured-texts">
+         <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
+         <a href="">Read more</a>
+        </div>
       </article>
 
       <aside class="new-article">
@@ -101,10 +105,12 @@
 
     </main>
     <footer class="attribution">
-      Challenge by
+      <p>Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/Ismail-SWE"> Ismailov K</a></p>
     </footer>
   </div>
+
+  <script src="app.js"></script>
   </body>
 </html>
