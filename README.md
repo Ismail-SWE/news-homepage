@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Ismail-SWE)
+- Live Site URL: [Add live site URL here](https://ismail-swe.github.io/news-homepage/)
 
 ## My process
 
@@ -244,5 +244,5 @@ Kod yozishdan oldin Google Sheets da katakchalarni birlashtrib, ranglash orqali 
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Ismail-SWE](https://www.frontendmentor.io/profile/Ismail-SWE)
 - GitHub - [@Ismail-SWE](https://github.com/Ismail-SWE)
