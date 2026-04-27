@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/Ismail-SWE)
+- Solution URL: (https://github.com/Ismail-SWE/news-homepage)
 - Live Site URL: (https://ismail-swe.github.io/news-homepage/)
 
 ## My process
