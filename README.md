@@ -27,12 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./preview.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Ismail-SWE)
-- Live Site URL: [Add live site URL here](https://ismail-swe.github.io/news-homepage/)
+- Solution URL: (https://github.com/Ismail-SWE)
+- Live Site URL: (https://ismail-swe.github.io/news-homepage/)
 
 ## My process
 
@@ -48,9 +48,9 @@ Users should be able to:
 
 ### What I learned
 
-**1. CSS Grid — 12 ustunli sistema**
+**1. CSS Grid — 12 column system**
 
-Har qanday nisbatni ifodalash uchun 12 ustun ishlatiladi — chunki 12 soni 2, 3, 4, 6 ga bo'linadi:
+12 columns are used because the number 12 is divisible by 2, 3, 4, and 6, making it flexible for any layout ratio:
 
 ```css
 .grid-container {
@@ -64,7 +64,7 @@ aside    { grid-column: span 4; grid-row: span 2; }
 section  { grid-column: span 12; }
 ```
 
-**2. grid-area — nom bilan joylash**
+**2. grid-area — placing elements by name**
 
 ```css
 .container {
@@ -78,46 +78,46 @@ section  { grid-column: span 12; }
 .sidebar { grid-area: sidebar; }
 ```
 
-**3. grid-column va grid-row — chiziq usuli**
+**3. grid-column and grid-row — line-based placement**
 
 ```css
-/* chiziqdan chiziqqa */
+/* from line to line */
 .item { grid-column: 1 / 4; }
 
-/* nisbiy — qancha ustun egallash */
+/* relative — how many columns to span */
 .item { grid-column: span 3; }
 ```
 
-**4. minmax() — moslashuvchan o'lcham**
+**4. minmax() — flexible sizing**
 
 ```css
 grid-template-rows: repeat(3, minmax(150px, auto));
-/* kamida 150px, kontent ko'p bo'lsa kengayadi */
+/* minimum 150px, expands if content is larger */
 ```
 
-**5. gap — grid va flex da oraliq**
+**5. gap — spacing in grid and flex**
 
 ```css
-/* eski usul */
+/* old way */
 grid-column-gap: 20px;
 grid-row-gap: 20px;
 
-/* zamonaviy */
+/* modern */
 gap: 20px;
 gap: 20px 40px; /* row column */
 ```
 
-**6. object-fit — rasmni to'g'ri ko'rsatish**
+**6. object-fit — proper image display**
 
 ```css
 img {
     width: 100%;
     height: 300px;
-    object-fit: cover; /* rasm cho'zilmaydi, kesib ko'rsatadi */
+    object-fit: cover; /* image is cropped, not stretched */
 }
 ```
 
-**7. Nested grid — grid ichida grid**
+**7. Nested grid — grid inside grid**
 
 ```css
 .featured {
@@ -125,15 +125,15 @@ img {
     grid-template-columns: 1fr 1fr;
 }
 
-/* picture span 2 oladi, h1 va div avtomatik joylashadi */
+/* picture spans 2 columns, h1 and div auto-place below */
 .featured picture { grid-column: span 2; }
 ```
 
-**8. Auto-placement — avtomatik joylash**
+**8. Auto-placement**
 
-Grid elementlarni o'zi navbat bilan bo'sh kataklarga joylashtiradi. `span 2` bergan element ikki ustunni olgandan keyin, keyingi element o'zi to'g'ri joyga tushadi.
+Grid automatically places elements into empty cells in order. Once an element with `span 2` takes two columns, the next element automatically falls into the correct position.
 
-**9. Flexbox + Grid birgalikda**
+**9. Flexbox + Grid together**
 
 ```css
 nav {
@@ -145,7 +145,7 @@ nav {
 .nav-links {
     display: flex;
     gap: 24px;
-    margin: 0 auto; /* o'rtaga olish */
+    margin: 0 auto; /* centers between logo and hamburger */
 }
 ```
 
@@ -186,7 +186,7 @@ overlay.addEventListener('click', () => {
 });
 ```
 
-**12. picture elementi — responsive rasm**
+**12. picture element — responsive images**
 
 ```html
 <picture>
@@ -195,9 +195,9 @@ overlay.addEventListener('click', () => {
 </picture>
 ```
 
-Katta ekranda desktop rasm, kichik ekranda mobile rasm avtomatik ko'rsatiladi.
+The browser automatically shows the desktop image on large screens and the mobile image on small screens.
 
-**13. CSS text effektlar**
+**13. CSS text effects**
 
 ```css
 .featured a {
@@ -211,36 +211,36 @@ Katta ekranda desktop rasm, kichik ekranda mobile rasm avtomatik ko'rsatiladi.
 }
 ```
 
-**14. flex-shrink: 0 — muhim**
+**14. flex-shrink: 0 — important for images in flex containers**
 
 ```css
 .trending-item img {
     width: 100px;
     height: 130px;
     object-fit: cover;
-    flex-shrink: 0; /* rasm kichraymaydi */
+    flex-shrink: 0; /* prevents image from shrinking */
 }
 ```
 
-**15. Google Sheets da grid eskiz qilish**
+**15. Sketching grid layouts in Google Sheets**
 
-Kod yozishdan oldin Google Sheets da katakchalarni birlashtrib, ranglash orqali grid layoutni oldin vizual chizib olish — bu vaqtni tejaydi va CSS yozishni osonlashtiradi.
+Before writing code, sketching the grid layout in Google Sheets by merging cells and adding colors helps visualize the structure clearly and makes CSS much easier to write.
 
 ### Continued development
 
-- CSS animations va transitions
-- JavaScript ES6+ chuqurroq
+- CSS animations and transitions
+- JavaScript ES6+ in depth
 - React framework
 - TypeScript
-- Accessibility (ARIA) yaxshilash
-- CSS variables ishlatish
+- Accessibility (ARIA) improvements
+- CSS custom properties
 
 ### AI Collaboration
 
 - **Tool:** Claude (Anthropic)
-- **How:** CSS Grid tushunchalarini o'rganishda, debugging qilishda, responsive design va JavaScript yozishda yordam olish uchun foydalandim
-- **What worked well:** Har bir konsepsiyani savol-javob orqali tushunish juda samarali bo'ldi. Screenshot yuborib, nima xato ekanini aniqlash qulay bo'ldi
-- **What didn't:** Ba'zi CSS qiymatlarini o'zim sinab ko'rib topishim kerak bo'ldi — AI har doim ham vizual natijani oldindan ayta olmaydi
+- **How:** Used for learning CSS Grid concepts, debugging layout issues, writing responsive design media queries, and implementing JavaScript toggle functionality
+- **What worked well:** Learning through Q&A with screenshots made it easy to identify and fix issues instantly. Each concept was explained clearly with examples
+- **What didn't:** Some CSS values still needed manual trial and error — AI cannot always predict the exact visual result
 
 ## Author
 
