@@ -1,108 +1,248 @@
-# Frontend Mentor - News homepage
+# Frontend Mentor - News homepage solution
 
-![Design preview for the News homepage coding challenge](preview.jpg)
+This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl).
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a good understanding of HTML and CSS, and basic JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this news website homepage and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
+- Toggle the mobile navigation menu open and closed
 
-### Want some support on the challenge? 
+### Screenshot
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+![](./screenshot.jpg)
 
-## Where to find everything
+### Links
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+## My process
 
-If you would like the Figma design file to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Built with
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+- Semantic HTML5 markup
+- CSS Grid (12 column system)
+- Flexbox
+- Vanilla JavaScript
+- Mobile-first responsive design
+- Google Fonts (Inter)
+- CSS custom properties
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### What I learned
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+**1. CSS Grid — 12 ustunli sistema**
 
-## Using AI coding assistants
+Har qanday nisbatni ifodalash uchun 12 ustun ishlatiladi — chunki 12 soni 2, 3, 4, 6 ga bo'linadi:
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+.featured { grid-column: span 8; }
+aside    { grid-column: span 4; grid-row: span 2; }
+section  { grid-column: span 12; }
+```
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+**2. grid-area — nom bilan joylash**
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+```css
+.container {
+    grid-template-areas:
+        'header  header  header'
+        'main    main    sidebar'
+        'footer  footer  footer';
+}
 
-## Building your project
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+**3. grid-column va grid-row — chiziq usuli**
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```css
+/* chiziqdan chiziqqa */
+.item { grid-column: 1 / 4; }
 
-## Deploying your project
+/* nisbiy — qancha ustun egallash */
+.item { grid-column: span 3; }
+```
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+**4. minmax() — moslashuvchan o'lcham**
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```css
+grid-template-rows: repeat(3, minmax(150px, auto));
+/* kamida 150px, kontent ko'p bo'lsa kengayadi */
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+**5. gap — grid va flex da oraliq**
 
-## Create a custom `README.md`
+```css
+/* eski usul */
+grid-column-gap: 20px;
+grid-row-gap: 20px;
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+/* zamonaviy */
+gap: 20px;
+gap: 20px 40px; /* row column */
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+**6. object-fit — rasmni to'g'ri ko'rsatish**
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```css
+img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* rasm cho'zilmaydi, kesib ko'rsatadi */
+}
+```
 
-## Submitting your solution
+**7. Nested grid — grid ichida grid**
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+```css
+.featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+/* picture span 2 oladi, h1 va div avtomatik joylashadi */
+.featured picture { grid-column: span 2; }
+```
 
-## Sharing your solution
+**8. Auto-placement — avtomatik joylash**
 
-There are multiple places you can share your solution:
+Grid elementlarni o'zi navbat bilan bo'sh kataklarga joylashtiradi. `span 2` bergan element ikki ustunni olgandan keyin, keyingi element o'zi to'g'ri joyga tushadi.
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+**9. Flexbox + Grid birgalikda**
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+```css
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+.nav-links {
+    display: flex;
+    gap: 24px;
+    margin: 0 auto; /* o'rtaga olish */
+}
+```
 
-## Got feedback for us?
+**10. Responsive design — media queries**
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+```css
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+    .featured {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+    }
 
-**Have fun building!** 🚀
-# news-homepage
+    .hamburger { display: block; }
+    .nav-links  { display: none; }
+    .nav-links.open { display: flex; }
+}
+```
+
+**11. Mobile menu — JavaScript toggle**
+
+```js
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const overlay = document.getElementById('overlay');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    overlay.classList.toggle('open');
+});
+
+overlay.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    overlay.classList.remove('open');
+});
+```
+
+**12. picture elementi — responsive rasm**
+
+```html
+<picture>
+    <source media="(min-width: 768px)" srcset="./assets/images/image-web-3-desktop.jpg"/>
+    <img src="./assets/images/image-web-3-mobile.jpg" alt="Web 3.0"/>
+</picture>
+```
+
+Katta ekranda desktop rasm, kichik ekranda mobile rasm avtomatik ko'rsatiladi.
+
+**13. CSS text effektlar**
+
+```css
+.featured a {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.featured a:hover {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+}
+```
+
+**14. flex-shrink: 0 — muhim**
+
+```css
+.trending-item img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    flex-shrink: 0; /* rasm kichraymaydi */
+}
+```
+
+**15. Google Sheets da grid eskiz qilish**
+
+Kod yozishdan oldin Google Sheets da katakchalarni birlashtrib, ranglash orqali grid layoutni oldin vizual chizib olish — bu vaqtni tejaydi va CSS yozishni osonlashtiradi.
+
+### Continued development
+
+- CSS animations va transitions
+- JavaScript ES6+ chuqurroq
+- React framework
+- TypeScript
+- Accessibility (ARIA) yaxshilash
+- CSS variables ishlatish
+
+### AI Collaboration
+
+- **Tool:** Claude (Anthropic)
+- **How:** CSS Grid tushunchalarini o'rganishda, debugging qilishda, responsive design va JavaScript yozishda yordam olish uchun foydalandim
+- **What worked well:** Har bir konsepsiyani savol-javob orqali tushunish juda samarali bo'ldi. Screenshot yuborib, nima xato ekanini aniqlash qulay bo'ldi
+- **What didn't:** Ba'zi CSS qiymatlarini o'zim sinab ko'rib topishim kerak bo'ldi — AI har doim ham vizual natijani oldindan ayta olmaydi
+
+## Author
+
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- GitHub - [@Ismail-SWE](https://github.com/Ismail-SWE)
