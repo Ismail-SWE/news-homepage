@@ -1,12 +1,16 @@
 # Frontend Mentor - News homepage solution
 
+### Screenshot
+
+![](./screenshot.png)
+
 This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl).
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [The challenge](#the-challenge)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -25,9 +29,6 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 - Toggle the mobile navigation menu open and closed
 
-### Screenshot
-
-![](./screenshot.png)
 
 ### Links
 
